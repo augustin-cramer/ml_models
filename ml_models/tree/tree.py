@@ -1,6 +1,6 @@
 import numpy as np
 from queue import LifoQueue
-from impurity import IMPURITY_FNS
+from tree.impurity import IMPURITY_FNS
 
 class Node:
     def __init__(self, impurity) -> None:
