@@ -7,7 +7,7 @@ A Python package for machine learning models.
 
 ## Installation
 ```bash
-pip install ml_models
+pip install ml_models_augustin
 ```
 
 ## Usage
