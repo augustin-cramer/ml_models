@@ -53,7 +53,6 @@ class Tree:
                 self.set_as_leaf(node, int(predicted_class))
                 continue
 
-            # Split the node
             feature, value = self.find_splitting_criterion(node.impurity, X, y)
             _, left_child_impurity, right_child_impurity = self.compute_gain(
                 node.impurity,
@@ -66,12 +65,10 @@ class Tree:
 
             self.set_as_node(node, feature, value)
 
-            # Create left and right child nodes
             left_child = Node(impurity=left_child_impurity)
             right_child = Node(impurity=right_child_impurity)
             self.nodes.extend([left_child, right_child])
 
-            # Split the data and add to the queue
             mask = X[:, feature] <= value
             nodes_queue.put((X[mask], y[mask], left_child))
             nodes_queue.put((X[~mask], y[~mask], right_child))
