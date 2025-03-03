@@ -15,7 +15,7 @@ pip install ml_models_augustin
 from ml_models import Tree
 
 # Create a Tree instance
-model = Tree(max_depth=5)
+model = Tree()
 
 # Fit the model to data
 model.fit(X_train, y_train)
